@@ -30,7 +30,7 @@ const SimpleForm = props => {
         <label className="switch">
           <Field name="firstName" component="input" type="checkbox" />
 
-          <div className="tran logo" style={sectionStyle} />
+          <div className="tran logo wobble-hor-bottom" style={sectionStyle} />
 
           <span class="slider" />
         </label>
