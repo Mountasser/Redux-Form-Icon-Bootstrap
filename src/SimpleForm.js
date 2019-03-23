@@ -13,8 +13,8 @@ const SimpleForm = props => {
     ? red
     : green;
   var sectionStyle = {
-    width: "62px",
-    height: "66px",
+    width: "61px",
+    height: "64px",
     cursor: "pointer",
     backgroundImage: `url(${icon})`
   };
