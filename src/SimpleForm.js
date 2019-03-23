@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import red from "./logo.png";
-import green from "./logo2.png";
+import red from "./red.png";
+import green from "./green.png";
 import { connect } from "react-redux";
 import "./style.css";
 
@@ -13,11 +13,10 @@ const SimpleForm = props => {
     ? red
     : green;
   var sectionStyle = {
-    width: "51px",
-    height: "54px",
+    width: "62px",
+    height: "66px",
     cursor: "pointer",
-    backgroundImage: `url(${icon})`,
-    borderRadius: "10px"
+    backgroundImage: `url(${icon})`
   };
   return (
     <form onSubmit={handleSubmit}>
