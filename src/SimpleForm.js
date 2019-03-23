@@ -18,20 +18,26 @@ const SimpleForm = props => {
     cursor: "pointer",
     backgroundImage: `url(${icon})`
   };
+  var wobble = !!(
+    props.state.form.simple && props.state.form.simple.values.firstName
+  )
+    ? "wobble-hor-bottom"
+    : "wobble-hor-bottomV2";
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        {console.log(
-          "popo",
-          !!(
-            props.state.form.simple && props.state.form.simple.values.firstName
-          )
-        )}
+        {console.log("popo", wobble)}
         <label className="switch">
-          <Field name="firstName" component="input" type="checkbox" />
-
-          <div className="tran logo wobble-hor-bottom" style={sectionStyle} />
-
+          <Field
+            name="firstName"
+            component="input"
+            type="checkbox"
+            onChange={event => {}}
+          />
+          <div
+            className={["tran", "logo", wobble].join(" ")}
+            style={sectionStyle}
+          />
           <span class="slider" />
         </label>
       </div>
