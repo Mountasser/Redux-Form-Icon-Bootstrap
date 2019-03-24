@@ -21,8 +21,14 @@ const SimpleForm = props => {
   var wobble = !!(
     props.state.form.simple && props.state.form.simple.values.firstName
   )
-    ? "wobble-hor-bottom"
-    : "wobble-hor-bottomV2";
+    ? ["wobble-hor-bottom"].join(" ")
+    : ["wobble-hor-bottomV2"].join(" ");
+
+  var pulse = !!(
+    props.state.form.simple && props.state.form.simple.values.firstName
+  )
+    ? ["redPulse"].join(" ")
+    : ["greenPulse"].join(" ");
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -34,12 +40,15 @@ const SimpleForm = props => {
             type="checkbox"
             onChange={event => {}}
           />
-          <div
-            className={["tran", "logo", wobble].join(" ")}
-            style={sectionStyle}
-          />
+          <div className={pulse}>
+            <div
+              className={["tran", "logo", wobble].join(" ")}
+              style={sectionStyle}
+            />
+          </div>
           <span class="slider" />
         </label>
+        <span className="pulse" />
       </div>
     </form>
   );
