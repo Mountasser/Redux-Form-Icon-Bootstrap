@@ -5,10 +5,10 @@ import green from "./green.png";
 import { connect } from "react-redux";
 import "./style.css";
 
-const SimpleForm = props => {
+const Logo = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   var icon = !!(
-    props.state.form.simple && props.state.form.simple.values.firstName
+    props.state.form.simple && props.state.form.simple.values.checkbox
   )
     ? red
     : green;
@@ -19,13 +19,13 @@ const SimpleForm = props => {
     backgroundImage: `url(${icon})`
   };
   var wobble = !!(
-    props.state.form.simple && props.state.form.simple.values.firstName
+    props.state.form.simple && props.state.form.simple.values.checkbox
   )
     ? ["wobble-hor-bottom"].join(" ")
     : ["wobble-hor-bottomV2"].join(" ");
 
   var pulse = !!(
-    props.state.form.simple && props.state.form.simple.values.firstName
+    props.state.form.simple && props.state.form.simple.values.checkbox
   )
     ? ["redPulse"].join(" ")
     : ["greenPulse"].join(" ");
@@ -35,7 +35,7 @@ const SimpleForm = props => {
         {console.log("popo", wobble)}
         <label className="switch">
           <Field
-            name="firstName"
+            name="checkbox"
             component="input"
             type="checkbox"
             onChange={event => {}}
@@ -54,7 +54,7 @@ const SimpleForm = props => {
   );
 };
 
-const SimpleFormCo = connect(state => ({ state: state }))(SimpleForm);
+const LogoForm = connect(state => ({ state: state }))(Logo);
 export default reduxForm({
   form: "simple" // a unique identifier for this form
-})(SimpleFormCo);
+})(LogoForm);
