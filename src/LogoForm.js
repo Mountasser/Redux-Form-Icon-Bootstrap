@@ -18,17 +18,23 @@ const Logo = props => {
     cursor: "pointer",
     backgroundImage: `url(${icon})`
   };
+  var toto = props.state.form.simple && props.state.form.simple.values.checkbox;
+  var toto2 =
+    props.state.form.simple && props.state.form.simple.values.checkbox2;
+  console.log("toto", toto);
+  console.log("toto2", toto2);
   var wobble = !!(
     props.state.form.simple && props.state.form.simple.values.checkbox
   )
     ? ["wobble-hor-bottom"].join(" ")
     : ["wobble-hor-bottomV2"].join(" ");
-
   var pulse = !!(
     props.state.form.simple && props.state.form.simple.values.checkbox
   )
     ? ["redPulse"].join(" ")
     : ["greenPulse"].join(" ");
+  var props = { hidden: true };
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -40,6 +46,7 @@ const Logo = props => {
             type="checkbox"
             onChange={event => {}}
           />
+
           <div className={pulse}>
             <div
               className={["tran", "logo", wobble].join(" ")}
